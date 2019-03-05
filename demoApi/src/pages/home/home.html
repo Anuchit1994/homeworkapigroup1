@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar text-center>
+    <ion-title>
+      รายการสินค้า
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+      <ion-card-content>
+        
+    <ion-row text-center>
+      <ion-col col-3>
+      <h2>  ลำดับ </h2>
+      </ion-col>
+      <ion-col col-5>
+      <h2>  ชื่อสินค้า</h2>
+      </ion-col>
+      <ion-col col-2>
+      <h2>  ราคา</h2>
+      </ion-col>
+      <ion-col col-2>
+        
+        </ion-col>
+      
+
+    </ion-row>
+  
+      </ion-card-content>
+    </ion-card>
+
+    <!-- <ion-list> -->
+      <ion-item *ngFor="let s of students,let i=index">
+          <ion-row text-center >
+              <ion-col col-3 (click)="goInfoPage(s.id)">
+              {{ i+1 }}
+              </ion-col>
+              <ion-col col-5 (click)="goInfoPage(s.id)">
+              {{ s.nameProduct}}
+              </ion-col>
+              <ion-col col-2 (click)="goInfoPage(s.id)">
+              {{ s.priceProduct }}
+              </ion-col>
+
+              <ion-col col-2>
+                <button ion-button color="dark" (click)="delete(s.id)">Delete</button>
+                </ion-col>
+              </ion-row>
+      </ion-item>
+    <!-- </ion-list> -->
+
+<div>
+<button ion-button block (click)="goCreatePage()">เพิ่มข้อมูล</button>
+</div>
+
+
+  
+</ion-content>
