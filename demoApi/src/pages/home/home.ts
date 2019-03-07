@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { CallApiProvider } from '../../providers/call-api/call-api';
+import { FormBuilder } from '@angular/forms';
 
 
 @Component({
@@ -9,10 +10,21 @@ import { CallApiProvider } from '../../providers/call-api/call-api';
 })
 export class HomePage {
 
-  students: any
+  students: any;
+  newStudent:any;
 
-  constructor(public navCtrl: NavController, public callApi: CallApiProvider) {
+  constructor(public navCtrl: NavController, public callApi: CallApiProvider,public fb:FormBuilder) {
+    this.newStudent =fb.group({
+      'id':null,
+      'nameProduct':null,
+      'priceProduct':null,
+      'profileImage':null,
+      'cartproduct':null
+      })
+  }
 
+  gocartproduct(){
+    this.navCtrl.push('CartproductPage', { id:this.newStudent });
   }
 
   ionViewDidEnter() {
